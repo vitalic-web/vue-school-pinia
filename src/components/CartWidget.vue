@@ -21,7 +21,7 @@ const cartStore = useCartStore();
 						v-for="(items, name) in cartStore.grouped"
 						:key="name"
             :product="items[0]"
-            :count="items.length"
+            :count="cartStore.groupCount(name)"
             @updateCount=""
             @clear=""
           />
