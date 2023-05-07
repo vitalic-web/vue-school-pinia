@@ -22,7 +22,7 @@ const cartStore = useCartStore();
 						:key="name"
             :product="items[0]"
             :count="cartStore.groupCount(name)"
-            @updateCount=""
+            @updateCount="cartStore.setItemCount(items[0], $event)"
             @clear="cartStore.clearItem(name)"
           />
         </ul>
