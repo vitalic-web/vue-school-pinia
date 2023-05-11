@@ -5,11 +5,9 @@ import { useAuthUserStore } from "@/stores/AuthUserStore";
 
 export const useCartStore = defineStore("CartStore", {
   historyEnabled: true,
-  state: () => {
-    return {
-      items: useLocalStorage("CartStore:items", []),
-    }
-  },
+  state: () => ({
+    items: useLocalStorage("CartStore:items", []),
+  }),
   getters: {
     count: (state) => state.items.length,
     isEmpty: (state) => state.count === 0,
